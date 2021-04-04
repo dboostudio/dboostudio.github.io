@@ -1,0 +1,56 @@
+---
+layout: article
+titles: Who's Dboo?
+key: page-about
+---
+## 관심 기술 분야
+
+마이크로서비스 아키텍쳐, 스프링 부트, 도커, 쿠버네티스에 관심이 있습니다.
+
+## 참여 프로젝트
+1. IOS, Android <-> PC App 통신 백엔드 서버 구축  
+  사용한 기술스택 :
+  Spring Boot Framework
+  APNS, FCM, Baidu Push Library
+  Docker-Compose, Jenkins, Naver Cloud
+
+2. JSP 기반 웹페이지 구축  
+  사용한 기술스택 :
+  Spring Framwork
+
+3. QT기반 크로스플랫폼 PC앱 개발 및 배포  
+  사용한 기술스택 :
+  QT Framework(C++, Javascript, QMake)  
+  WINDOW : MSIX 배포  
+  MAC : app번들을 dmg파일로 배포  
+
+## 보유 기술스택
+### Spring Framework
+- Spring MVC
+- Spring Security
+- Spring JPA
+- JUnit5
+- Thymeleaf
+
+### Java
+- Java 기초 문법
+- Java 8 추가 문법 (Optional, Stream, Lambda Expression)
+
+### Python
+- Python 기초 문법
+- Python 크롤링
+- Pandas, Numpy 데이터 가공 기초
+- TensorFlow 기초
+
+### C++
+- C++ 기초 문법
+
+### Javascript
+- Javascript 기초 문법
+- jQuery 기초 문법
+
+## 약력
+- 1991.11.14 : 제주특별자치도 제주시에서 출생 2007.03 ~ 2009.01 : 제주과학고등학교 졸업
+- 2009.03 ~ 2013.08 : 성균관대학교 물리학과 졸업
+- 2013.09 ~ 2015.04 : 성균나노과학기술대학원(SAINT) 중퇴
+- 2020.03 ~ 현재 : (주)CS, S/W 엔지니어로 재직중
