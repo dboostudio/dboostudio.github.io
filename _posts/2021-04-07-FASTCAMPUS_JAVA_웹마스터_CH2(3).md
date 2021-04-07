@@ -78,7 +78,7 @@ buffer의 메모리 주소값은 계속 동일하다. mutable이기 때문이다
 |double|Double|
 
 - 기본형을 클래스로 감싸서 사용할 수 있도록 함.
-- 자바 초기에는 기본형과 wrapper클래스와 호환이 되지 않았음(auto-un|boxing)
+- 자바 초기에는 기본형과 wrapper클래스와 호환이 되지 않았음(auto-un\|boxing)
 
 ## 제네릭 프로그래밍
 
