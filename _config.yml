@@ -36,7 +36,7 @@ timezone: Asia/Seoul # see https://en.wikipedia.org/wiki/List_of_tz_database_tim
 author:
   type      : Back-End Engineer # "person" (default), "organization"
   name      : Daehwan Boo
-  url       :
+  url       : dboostudio.github.io
   avatar    : # path or url of avatar image (square)
   bio       : 바둑두는 프로그래머
   email     : dboo.studio@gmail.com
