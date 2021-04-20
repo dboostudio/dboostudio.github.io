@@ -22,7 +22,6 @@ tags: LectureNote Fastcampus java syntax
 - 인스턴스/정적 내부 클래스
 
 ~~~java
-
 class OutClass{
 
   private int num = 10;
@@ -84,32 +83,115 @@ public class Main {
     sInClass.inStaticTest();
   }
 }
-
 ~~~
 
-- 지역/익명 내부 클래스
+##### 지역/익명 내부 클래스M
+
+- 지역 내부 클래스  
+: 지역 변수와 같이 메소드 내부에서 정의하여 사용하는 클래스,  
+메소드 호출이 끝나면 메소드에 사용된 지역변수의 유효성은 사라짐  
+메소드 호출 이후에도 사용해야 하는 경우가 있을수 있으므로, 지역 내부 클래스에서 사용하는 메소드의 지역  
+변수나 매개 변수는 final로 선언됨.
 
 ~~~java
-
 class Outer {
 
   int outNum = 100;
   static int sNum = 200;
 
-  Runnable getRunnable() {
+  Runnable getRunnable(int i) {
+
+    int num = 10; //stack
 
     class MyRunnable implements Runnable {
 
+      int localNum = 1000; //stack
+
       @Override
       public void run() {
+        //i = 100; error
+        //num = 20; error
+        System.out.println(i);
+        System.out.println(num);
         System.out.println(outNum);
-        System.out.println(sNum);
+        System.out.println(Outer.sNum);
       }
     }
-
     return new MyRunnable();
   }
-
 }
+~~~
 
+i 와 num의 값을 변경하는데에서 error가 나는 이유는 getRunnable()메소드가 호출되는 시점과,
+MyRunnable 지역 내부 클래스가 생성되는 시점이 다르고, stack메모리에 있는 변수값이 메소드 호출 후에
+없어지기 때문이다.
+이를 해결하기 위해서는, final로 선언해서 상수화한다. 현재는 final선언 해주지 않아도 컴파일러가 바꿔준다.
+
+~~~java
+class Outer {
+
+  int outNum = 100;
+  static int sNum = 200;
+
+  Runnable getRunnable(final int i) {
+
+    final int num = 10; //stack
+
+    class MyRunnable implements Runnable {
+
+      int localNum = 1000; //stack
+
+      @Override
+      public void run() {
+        i = 100;
+        num = 20;
+        System.out.println(i);
+        System.out.println(num);
+        System.out.println(outNum);
+        System.out.println(Outer.sNum);
+      }
+    }
+    return new MyRunnable();
+  }
+}
+~~~
+
+- 익명 내부 클래스
+위의 MyRunnable클래스를 유심히 보면, 이 클래스명은 Outer안에서만 쓰고 다른데에서는 직접 사용할 일이
+전혀 없다. 클래스의 이름이 즉 필요가 없고, 다음과 같이 한다.
+
+~~~java
+class Outer {
+
+  int outNum = 100;
+  static int sNum = 200;
+
+  Runnable getRunnable(final int i) {
+
+    final int num = 10; //stack
+
+    return new Runnable(){ //익명 내부 클래스
+
+      int localNum = 1000; //stack
+
+      @Override
+      public void run() {
+        i = 100;
+        num = 20;
+        System.out.println(i);
+        System.out.println(num);
+        System.out.println(outNum);
+        System.out.println(Outer.sNum);
+      }
+    };//익명 내부 클래스 끝나는 곳에 세미콜론 필수
+    //객체 return문 삭제
+  }
+
+  Runnable runnable = new Runnable() { //클래스의 멤버변수로 접근할 수 있도록 하는법
+    @Override
+    public void run() {
+      System.out.println("runnable class");
+    }
+  }
+}
 ~~~
