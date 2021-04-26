@@ -225,7 +225,7 @@ plugins:
   - jemoji
 
 ## kramdown 설정
-kramdown:
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
+# kramdown:
+#   syntax_highlighter_opts:
+#     block:
+#       line_numbers: true
