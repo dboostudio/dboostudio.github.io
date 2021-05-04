@@ -1,6 +1,6 @@
 ---
 title: Moonlander 키보드 세팅
-tags: Moonlander 리뷰
+tags: Dboo's Moonlander 리뷰
 ---
 
 아기다리 고기다리 던 내 생애 첫 어고노믹 키보드 문랜더 MARK 1 이 도착했다.
