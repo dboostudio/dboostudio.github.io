@@ -1,6 +1,6 @@
 ---
 title: <패스트캠퍼스> Java 웹개발마스터 - CH3. 스프링 입문(2) 싱글톤 패턴
-tags: LectureNote Fastcampus Design_Pattern Proxy
+tags: LectureNote Fastcampus Design_Pattern
 ---
 
 ## Proxy Pattern
@@ -94,7 +94,7 @@ browser.show();
 browser.show();
 ~~~
 
-### 캐시를 사용했을 때와 이닐때의 지연시간
+### AOP 패턴
 
 ~~~java
 public class AopBroswer implements IBroswer {
@@ -154,4 +154,4 @@ aopBroswer.show();
 System.out.println("loading time : " + end.get());
 ~~~
 처음 show()메소드를 호출 하면 1500ms보다 살짝 더 걸리는 지연시간이 나오는데, 두번째 로딩할 때는 로딩
-시간이 0ms으로 나온다. 캐싱의 힘.
+시간이 0ms으로 나온다. 이게 캐싱의 힘인가..?
