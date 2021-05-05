@@ -1,5 +1,5 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 - CH3. 스프링 입문(2) 싱글톤 패턴
+title: <패스트캠퍼스> Java 웹개발마스터 - CH3. 스프링 입문(3) 싱글톤 패턴
 tags: LectureNote Fastcampus Design_Pattern
 ---
 
