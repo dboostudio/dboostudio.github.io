@@ -1,5 +1,5 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 - CH3. 스프링 입문(3) 싱글톤 패턴
+title: <패스트캠퍼스> Java 웹개발마스터 - CH3. 스프링 입문(3) 프록시 패턴
 tags: LectureNote Fastcampus Design_Pattern
 ---
 
@@ -10,16 +10,14 @@ Proxy Class를 통해서 대신 전달하는 형태로 설계되며, 실제Clien
 
 Cache의 기능으로도 활용이 가능하다. SOLID 원칙 중에서 개방폐쇄원칙과(OCP)과 의존 역전 원칙(DIP)을 따른다.
 
-### Proxy Pattern 구현예제
-
 ~~~java
-public interface IBrowser{
+public interface IBrowser {
   Html show();
 }
 ~~~
 
 ~~~java
-public class Html{
+public class Html {
 
   private String url;
 
@@ -34,12 +32,12 @@ public class Browser implements IBrowser {
 
   private String url;
 
-  public Browser(String url){
+  public Browser(String url) {
     this.url = url;
   }
 
   @override
-  public Html show(){
+  public Html show() {
     System.out.println("browser loading html from : " + url);
     return new Html(url);
   }
@@ -64,13 +62,13 @@ public class BroswerProxy implements IBroswer {
   private String url;
   private Html html;
 
-  public BroswerProxy(String url){
+  public BroswerProxy(String url) {
     this.url = url;
   }
 
   @override
   public Html show {
-    if(html==null){
+    if(html==null) {
       this.html = new Html(url);
       System.out.println("BroswerProxy loading html from : " + url);
     } else {
@@ -98,12 +96,13 @@ browser.show();
 
 ~~~java
 public class AopBroswer implements IBroswer {
+
   private String url;
   private Html html;
   private Runnable before;
   private Runnable after;
 
-  public AopBroswer(String url, Runnable before, Runnable after){
+  public AopBroswer(String url, Runnable before, Runnable after) {
     this.url = url;
     this.before = before;
     this.after = after;    
@@ -153,5 +152,6 @@ System.out.println("loading time : " + end.get());
 aopBroswer.show();
 System.out.println("loading time : " + end.get());
 ~~~
+
 처음 show()메소드를 호출 하면 1500ms보다 살짝 더 걸리는 지연시간이 나오는데, 두번째 로딩할 때는 로딩
 시간이 0ms으로 나온다. 이게 캐싱의 힘인가..?
