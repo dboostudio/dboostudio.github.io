@@ -3,7 +3,7 @@ title: <인프런> vue.js 시작하기 CH 2.Vue.js 소개
 tags: LectureNote Inflearn Vue.js
 ---
 
-ref : ![장기효님 블로그](https://joshua1988.github.io/web-development/vuejs/vuejs-tutorial-for-beginner/)
+ref : ![장기효님 블로그](https://joshua1988.github.io/web-development/vuejs/vuejs-tutorial-for-beginner/), Inflearn Vue.js시작하기 강의
 
 ## Vue.js 살펴보기
 
