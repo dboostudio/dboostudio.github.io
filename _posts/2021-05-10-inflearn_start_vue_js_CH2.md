@@ -1,5 +1,5 @@
 ---
-title: <인프런> vue.js 시작하기 CH 2.Vue.js 소개
+title: <인프런> Vue.js 시작하기 CH2. Vue.js 소개
 tags: LectureNote Inflearn Vue.js
 ---
 

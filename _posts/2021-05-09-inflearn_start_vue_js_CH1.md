@@ -1,5 +1,5 @@
 ---
-title: <인프런> vue.js 시작하기 CH 1.개발환경 설정
+title: <인프런> Vue.js 시작하기 CH1. 개발환경 설정
 tags: LectureNote Inflearn Vue.js
 ---
 
