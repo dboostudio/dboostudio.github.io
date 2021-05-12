@@ -94,7 +94,7 @@ DB접속하러 가보자.
 
 포트포워드 안에 보면 이미 오라클이 호스트포트 1521로 열려있음을 확인할 수 있다.
 
-![](/assets/img/ETC/short-tip/vagrant-virtualbox-network.png)
+![](/assets/img/ETC/short-tip/vagrant-virtualbox-portforwarding.png)
 
 나는 datagrip이라는 jetbrain DB툴을 주로 사용한다. 연결정보는 동일하니 다른 DB툴에서도 동일하게 연
 결설정을 해주면 된다.
