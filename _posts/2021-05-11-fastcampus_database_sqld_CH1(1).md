@@ -150,7 +150,6 @@ DB엔진서버1 -> 저장소1 (Acitve Set) // DB엔진서버2 -> 저장소2 (Sta
 
 - Shard Disk vs Shard Nothing
 - 저장소를 공유하는지 여부
-
 |:-:|:-:|
 |Shared Disk|Shared Nothing|
 |- Active-Active 구성 DB<br>- 저장소 공유로 인한 병목현상 발생<br>-DB서버를 늘려도 한계점에 도달|- 서버와 저장소 세트를 늘려 병렬처리<br>- 세트 갯수에 비례하여 처리율이 증가<br>- DB서버 다운시, 커버링 전략 필요<br>- 샤딩기술이 대표적인 Shared Nothing기술|
