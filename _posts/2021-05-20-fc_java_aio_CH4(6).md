@@ -1,6 +1,6 @@
 ---
 title: <패스트캠퍼스> Java 웹개발마스터 - CH4. 스프링 입문(6) IoC/DI
-tags: LectureNote Fastcampus
+tags: LectureNote Fastcampus Spring
 ---
 
 ## Spring Framwork
