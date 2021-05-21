@@ -1,184 +1,256 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 - CH4. 스프링 입문(7) IoC
-tags: LectureNote Fastcampus Spring
+title: <패스트캠퍼스> Java 웹개발마스터 - CH4. 스프링 입문(7) Spring Boot, GET API
+tags: LectureNote Fastcampus SpringBoot REST
 ---
 
-### IoC 코드 예제
+## SpringBoot
+- Spring Boot는 프로덕션 수준의 스프링 기반 어플리케이션을 쉽고 빠르게 만들 수 있다.
+- Spring Boot는 Spring구성이 거의 필요하지 않다.
+- Spring Boot는 java -jar로 실행하는 Java 어플리케이션을 만들 수 있다.
 
-일단 Spring Application 프로젝트를 하나 만든다. Spring Initializer로 간단한게 만들 수 있다.
+#### 주요 목표
+- Spring 개발에 대해 빠르고 광범위하게 적용할 수 있는 환경
+- 기본값 설정이 있지만 바꿀 수 있다.
+- 대규모 프로젝트에 공통적인 비 기능 제공(보안, 모니터링 등)
+- XML 구성 요구사항이 전혀 없다.
 
-이전 포스트에서 만들었던 클래스 및 인터페이스를 모조리 복사해 온 후, 패키지 명을 맞춰준다.
+- Build Tool : Maven, Gradle
+- Servlet Container : Tomcat, Jetty, Undertow, Netty, ...
 
-DI예제에서는 주입하는 객체를 개발자가 직접 new키워드를 통해 만들어서 객체를 직접 주입하고 있다.
+### Hello Spring Boot REST Api
 
-Spring Framework에서는 IoC특성상 주입되는 객체를 Spring Container가 관리해주도록 할 수 있다.
-
-어떻게 하느냐? 클래스위에 `@Component`라는 어노테이션을 붙이면 스프링이 해당 클래스의 인스턴스를 `빈`
-객체로써 등록을 해 주게 된다. `빈`객체는 싱글톤형태로 관리되게 된다.
-
-그러면, 우리는 등록된 `빈`객체에 어떻게 접근하고 사용할 수 있는가?  
-ApplicationContextAware를 스프링으로부터 상속받아서 정의하고 사용가능하다.
+REST Api를 처리하는 컨트롤러를 만드려면 다음과 같이 한다.
 
 ~~~java
-@Component
-public class ApplicationContextProvider implements ApplicationContextAware {
+@RestController //스프링부트에게 이 클래스는 REST를 처리하는 곳이라는 것을 알려준다.
+@RequestMapping("/api") //어떤 URI를 매핑할지 알려준다.
+public class ApiController {
 
-    private static ApplicationContext context;
+    @GetMapping("/hello") //GET방식으로 hello라는 url로 요청이 들어올시 처리하는 곳.
+    public String hello(){
+        return "hello spring boot";
+    }
+}
+~~~
+
+## GET API
+
+위의 Hello Spring Boot에서 사용한 \@GetMapping 어노테이션으로 들어가보면 다음과 같다.
+
+~~~java
+
+/**
+ * Annotation for mapping HTTP {@code GET} requests onto specific handler
+ * methods.
+ *
+ * <p>Specifically, {@code @GetMapping} is a <em>composed annotation</em> that
+ * acts as a shortcut for {@code @RequestMapping(method = RequestMethod.GET)}.
+ *
+ * @author Sam Brannen
+ * @since 4.3
+ * @see PostMapping
+ * @see PutMapping
+ * @see DeleteMapping
+ * @see PatchMapping
+ * @see RequestMapping
+ */
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@RequestMapping(method = RequestMethod.GET)
+public @interface GetMapping {
+
+	/**
+	 * Alias for {@link RequestMapping#name}.
+	 */
+	@AliasFor(annotation = RequestMapping.class)
+	String name() default "";
+
+	/**
+	 * Alias for {@link RequestMapping#value}.
+	 */
+	@AliasFor(annotation = RequestMapping.class)
+	String[] value() default {};
+
+	/**
+	 * Alias for {@link RequestMapping#path}.
+	 */
+	@AliasFor(annotation = RequestMapping.class)
+	String[] path() default {};
+
+	/**
+	 * Alias for {@link RequestMapping#params}.
+	 */
+	@AliasFor(annotation = RequestMapping.class)
+	String[] params() default {};
+
+	/**
+	 * Alias for {@link RequestMapping#headers}.
+	 */
+	@AliasFor(annotation = RequestMapping.class)
+	String[] headers() default {};
+
+	/**
+	 * Alias for {@link RequestMapping#consumes}.
+	 * @since 4.3.5
+	 */
+	@AliasFor(annotation = RequestMapping.class)
+	String[] consumes() default {};
+
+	/**
+	 * Alias for {@link RequestMapping#produces}.
+	 */
+	@AliasFor(annotation = RequestMapping.class)
+	String[] produces() default {};
+
+}
+~~~
+
+위에서 보이듯이, 여러가지 방법으로 GET요청방식을 지정할 수 있는데, 아무런 지정없이 문자열을 넣어주면
+value로 설정되는것이 기본값이다.
+
+보통 다음과 같이 GetMapping을 사용한다.
+
+~~~java
+@RestController
+@RequestMapping("/api/get")
+public class GetApiController {
+
+    @GetMapping(path = "/hello") // http://localhost:8080/api/get/hello
+    public String hello(){
+        return "get hello";
+    }
+
+    //에전방식, 위와 동일한 동작
+//    @RequestMapping("/hi") //모든 메소드가 동작한다. (GET, POST, DELTE, PUT ...)
+    @RequestMapping(path="/hi", method = RequestMethod.GET) // /api/get/hi
+    public String hi(){
+        return "get hi";
+    }
+
+}
+~~~
+
+### Path Variable
+
+요청하는 URL 패스를 변수로 사용하고 싶으면 다음과 같이한다.
+
+~~~java
+// http://localhost:8080/api/get/path-variable/{name}
+    @GetMapping("/path-variable/{name}") //주소에는 대문자 대신 -로 구분하는것이 좋다.
+    public String pathVariable(@PathVariable String name){ //pathVariable을 받도록한다.
+        System.out.println("PathVariable : " + name);
+        return name;
+    }
+~~~
+
+위는 PathVariable로 받으려고 하는 중괄호 안의 변수명과 파라미터로 받는 변수명이 일치하지만, 일치하지
+않을 경우는 다음과 명시해준다.
+
+~~~java
+// http://localhost:8080/api/get/path-variable/{name}
+    @GetMapping("/path-variable/{id}") //주소에는 대문자 대신 -로 구분하는것이 좋다.
+    public String pathVariable(@PathVariable(name="id") String pathName){ //pathVariable을 받도록한다.
+        System.out.println("PathVariable : " + pathName);
+        return pathName;
+    }
+~~~
+
+### Query Parameter
+
+요청하는 URL뒤에 `~~~?variable1=somethig1&variable2=somthing2`와 같이 `&key=value`형식
+으로 어떤 정보를 전달하는데 이것이 쿼리 파라미터이다. 이것을 처리하려면 다음과 같이 한다.
+
+~~~java
+//목표 : http://localhost:8080/api/get/query-param?user=dboo&email=~~.com&age=30
+@GetMapping(path = "query-param")
+public String queryParam(@RequestParam Map<String, String> queryParam){ //RequestParam으로 쿼리파라미터를 받는다.
+    StringBuilder sb = new StringBuilder();
+    queryParam.entrySet().forEach(
+            entry ->{
+                System.out.println(entry.getKey());
+                System.out.println(entry.getValue());
+                System.out.println("\n");
+
+                sb.append(entry.getKey() + " = " + entry.getValue() + "\n");
+            });
+    return sb.toString();
+}
+~~~
+
+그런데, 이 경우 어떤 키값으로 파라미터가 들어올 것인지 전혀 예측하거나 제한할 수 없기 때문에 이를 지정하
+는 방법을 알아보자.
+
+~~~java
+@GetMapping(path="query-param02")
+public String queryParam02(
+        @RequestParam String name, //파라미터를 지정한다.
+        @RequestParam String email,
+        @RequestParam int age
+){
+    System.out.println(name);
+    System.out.println(email);
+    System.out.println(age);
+    return name + " " + email + " " + age;
+}
+~~~
+
+그런데, 이 경우에 쿼리파라미터의 갯수가 늘어나면 늘어날수록 지정해야하는 파라미터도 많아지기 때문에 여기에
+DTO를 연계할 수 있도록 스프링이 제공을 한다. 현업에서 가장 많이 사용하는 방식이기도 하다.
+
+받을 쿼리파라미터를 DTO로 만들어보자.
+
+~~~java
+public class UserRequest {
+
+    private String name;
+    private String email;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        context = applicationContext;
-    }
-
-    public static ApplicationContext getContext(){
-        return context;
+    public String toString() {
+        return "UserRequest{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
 ~~~
 
-그리고, 기존 Encoder에 IEncoder를 바꾸는 set메소드를 하나 만들어주자.
+위 DTO를 활용해서 쿼리 파라미터를 받으려면 다음과 같이 한다.  
+queryParam02와 같이 어노테이션은 붙이지 않는다. 스프링부트가 알아서 매칭시켜준다.
 
 ~~~java
-public class Encoder {
-
-    private IEncoder iEncoder;
-
-    public Encoder(IEncoder iEncoder){
-        this.iEncoder = iEncoder;
+@GetMapping(path="query-param03")
+    public String queryParam03(UserRequest userRequest){ //어노테이션 붙이지 않는다.
+        System.out.println(userRequest.getName());
+        System.out.println(userRequest.getEmail());
+        System.out.println(userRequest.getAge());
+        return userRequest.toString();
     }
-
-    public void setIEncoder(IEncoder iEncoder){
-        this.iEncoder = iEncoder;
-    }
-
-    public String encode(String message){
-        return iEncoder.encode(message);
-    }
-}
-
 ~~~
-
-이러면 다음과 같이 메인에서 사용 가능하다.
-
-~~~java
-@SpringBootApplication
-public class IocApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(IocApplication.class, args);
-
-        ApplicationContext context = ApplicationContextProvider.getContext();
-
-        Base64Encoder base64Encoder = context.getBean(Base64Encoder.class);
-        UrlEncoder urlEncoder = context.getBean(UrlEncoder.class);
-
-        Encoder encoder = new Encoder(base64Encoder);
-
-        String url = "www.naver.com/boooks/it?page=10&size=20&name=spring-boot";
-        String result = encoder.encode(url);
-        System.out.println(result);
-
-        encoder.setIEncoder(urlEncoder);
-        result = encoder.encode(url);
-        System.out.println(result);
-    }
-}
-~~~
-
-아직까지는 Encoder도 직접 관리하고 있는데, 이또한 스프링에게 제어하도록 할 것이다. 일단 Encoder에
-`@Component`어노테이션을 붙여보자.
-
-~~~java
-@Component
-public class Encoder {
-
-    private IEncoder iEncoder;
-
-    public Encoder(@Qualifier("base64Encoder") IEncoder iEncoder){
-        this.iEncoder = iEncoder;
-    }
-
-    public void setIEncoder(IEncoder iEncoder){
-        this.iEncoder = iEncoder;
-    }
-
-    public String encode(String message){
-        return iEncoder.encode(message);
-    }
-}
-~~~
-
-그러면, 생성자쪽에서 에러가 나는것을 알 수 있는데 이는 Spring이 등록된 Bean중에 어떤 녀석을 붙여야 할
-지 알수 없기 때문에 생기는 에러이다. `@Qualifier`어노테이션을 통해 명시해주도록 하자.
-
-`빈`객체의 이름은 기본적으로 클래스명 맨앞글자만 소문자로 바꿔주면 되는데, 혹시 따로 빈객체의 이름을 명명
-하고 싶으면 `@Component("명명할이름")`으로 어노테이션을 붙여주면 된다.
-
-이제 Encoder도 빈객체로 등록했기 때문에 메인을 정리해보자.
-
-~~~java
-@SpringBootApplication
-public class IocApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(IocApplication.class, args);
-
-        ApplicationContext context = ApplicationContextProvider.getContext();
-
-//        Base64Encoder base64Encoder = context.getBean(Base64Encoder.class);
-//        UrlEncoder urlEncoder = context.getBean(UrlEncoder.class);
-
-        Encoder encoder = context.getBean(Encoder.class);
-
-        String url = "www.naver.com/boooks/it?page=10&size=20&name=spring-boot";
-        String result = encoder.encode(url);
-        System.out.println(result);
-
-        encoder.setIEncoder(context.getBean(UrlEncoder.class));
-        result = encoder.encode(url);
-        System.out.println(result);
-    }
-}
-~~~
-
-한클래스내에서 여러개의 빈을 등록하고 싶을때에는 다음과 같이 한다.
-
-~~~java
-@Configuration
-class AppConfig{
-
-    //Base64Encoder, UrlEncoder가 빈으로 등록되어있기때문에 아래 주입받는 곳에 자동으로 매칭됨.
-
-    @Bean("base64Encode")
-    public Encoder encoder(Base64Encoder base64Encoder){
-        return new Encoder(base64Encoder);
-    }
-
-    @Bean("urlEncode")
-    public Encoder encoder(UrlEncoder urlEncoder){
-        return new Encoder(urlEncoder);
-    }
-}
-~~~
-
-사용할때는 다음과 같이 한다.
-
-~~~java
-@SpringBootApplication
-public class IocApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(IocApplication.class, args);
-
-        ApplicationContext context = ApplicationContextProvider.getContext();
-
-        Encoder encoder = context.getBean("base64Encode", Encoder.class);
-        String url = "www.naver.com/boooks/it?page=10&size=20&name=spring-boot";
-        String result = encoder.encode(url);
-        System.out.println(result);
-    }
-}
-~~~
-
-이제 개발자가 관리하는 객체는 없고 전부 Spring이 객체를 관리하고 있다. IoC특징이 적용된 것이다. 등록된
-빈의 생명주기를 스프링이 관리를 해준다.
