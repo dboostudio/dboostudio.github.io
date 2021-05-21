@@ -15,6 +15,7 @@ tags: LectureNote Inflearn Database SQL
 ### 데이터베이스의 종류
 
 - 데이터 저장 방식에 따른 분류
+
 |:-:|:-:|
 |종류|설명|
 |-|-|
