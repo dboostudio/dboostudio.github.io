@@ -1,5 +1,5 @@
 ---
-title: <FastCampus> 데이터베이스와 SQLD CH1. 데이터베이스(2)
+title: <패스트캠퍼스> 데이터베이스와 SQLD CH1. 데이터베이스(2)
 tags: LectureNote Inflearn Database SQL
 ---
 
