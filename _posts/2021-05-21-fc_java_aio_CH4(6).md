@@ -1,5 +1,5 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 - CH4. 스프링 입문(7) Spring Boot, GET API
+title: <패스트캠퍼스> Java 웹개발마스터 - CH4. 스프링 입문(6) Spring Boot, GET API
 tags: LectureNote Fastcampus SpringBoot REST
 ---
 
