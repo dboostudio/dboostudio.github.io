@@ -35,7 +35,7 @@ public class ApiController {
 
 ## GET API
 
-위의 Hello Spring Boot에서 사용한 \@GetMapping 어노테이션으로 들어가보면 다음과 같다.
+위의 Hello Spring Boot에서 사용한 @GetMapping 어노테이션으로 들어가보면 다음과 같다.
 
 ~~~java
 
