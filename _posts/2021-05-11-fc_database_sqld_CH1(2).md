@@ -1,6 +1,6 @@
 ---
 title: <패스트캠퍼스> 데이터베이스와 SQLD CH1. 데이터베이스(2)
-tags: LectureNote Inflearn Database SQL
+tags: LectureNote Fastcampus Database SQL
 ---
 
 ## Oracle 설치
