@@ -137,23 +137,18 @@ public class GetApiController {
 
 ~~~java
 // http://localhost:8080/api/get/path-variable/{name}
-    @GetMapping("/path-variable/{name}") //주소에는 대문자 대신 -로 구분하는것이 좋다.
-    public String pathVariable(@PathVariable String name){ //pathVariable을 받도록한다.
-        System.out.println("PathVariable : " + name);
-        return name;
-    }
+@GetMapping("/path-variable/{name}") //주소에는 대문자 대신 -로 구분하는것이 좋다.
+public String pathVariable(@PathVariable String name){ //pathVariable을 받도록한다.
+    System.out.println("PathVariable : " + name);
+    return name;
+}
 ~~~
 
 위는 PathVariable로 받으려고 하는 중괄호 안의 변수명과 파라미터로 받는 변수명이 일치하지만, 일치하지
 않을 경우는 다음과 명시해준다.
 
 ~~~java
-// http://localhost:8080/api/get/path-variable/{name}
-    @GetMapping("/path-variable/{id}") //주소에는 대문자 대신 -로 구분하는것이 좋다.
-    public String pathVariable(@PathVariable(name="id") String pathName){ //pathVariable을 받도록한다.
-        System.out.println("PathVariable : " + pathName);
-        return pathName;
-    }
+public String pathVariable(@PathVariable(name="id") String pathName){ //pathVariable을 받도록한다.
 ~~~
 
 ### Query Parameter
