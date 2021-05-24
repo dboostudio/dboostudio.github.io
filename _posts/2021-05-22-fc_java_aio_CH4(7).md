@@ -92,7 +92,8 @@ case로 받기 때문에 매핑이 되지 않아서 그렇다.
 을 보내보자.
 
 ~~~console
-PutRequestDto{name='dboo', age=30, carList=[CarDto{name='BMW', carNumber='11가 1234'}, CarDto{name='A4', carNumber='22나 3456'}]}
+PutRequestDto{name='dboo', age=30, carList=[CarDto{name='BMW',
+carNumber='11가 1234'}, CarDto{name='A4', carNumber='22나 3456'}]}
 ~~~
 
 매핑이 잘 된것을 확인할 수 있다!
@@ -107,5 +108,21 @@ PutController를 다음과 같이 바꾸면 보낸 데이터 바디를 그대로
 public PutRequestDto put(@RequestBody PutRequestDto putRequestDto){
     System.out.println(putRequestDto.toString());
     return putRequestDto;
+}
+~~~
+
+## DELETE API
+
+- databody를 가지지 않는다.
+- query-parameter, path-variable로 처리한다.
+- 이미 리소스가 없는 상태에서 delete를 요청하면, 정상응답이 나와야 한다.(멱등성)
+
+### DELETE Controller
+
+~~~java
+@DeleteMapping("/delete/{userId}")
+public void delete(@PathVariable String userId, @RequestParam String account){
+    System.out.println(userId); // path-variable
+    System.out.println(account); // query-parameter
 }
 ~~~
