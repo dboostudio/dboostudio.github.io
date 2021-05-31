@@ -1,6 +1,0 @@
-- Gof 디자인 패턴 정리하기
-- scale(1.0) -프린트
-- 스프링 공부(Spring priciple, security, mvc)
-- DB공부
-- 네트워크 공부
-- 프론트 공부
