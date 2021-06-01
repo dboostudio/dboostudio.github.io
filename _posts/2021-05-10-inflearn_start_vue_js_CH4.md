@@ -3,7 +3,7 @@ title: <인프런> Vue.js 시작하기 CH4. 컴포넌트
 tags: LectureNote Inflearn Vue.js
 ---
 
-ref : ![장기효님 블로그](https://joshua1988.github.io/web-development/vuejs/vuejs-tutorial-for-beginner/), Inflearn Vue.js시작하기 강의
+ref : [장기효님 블로그](https://joshua1988.github.io/web-development/vuejs/vuejs-tutorial-for-beginner/), Inflearn Vue.js시작하기 강의
 
 ## Vue Component
 
