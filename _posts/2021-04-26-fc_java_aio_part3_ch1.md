@@ -1,5 +1,5 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 - CH4. 스프링 입문(1)
+title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH1. 스프링 입문_객체지향
 tags: LectureNote Fastcampus OOP
 ---
 

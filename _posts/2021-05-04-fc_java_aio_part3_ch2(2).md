@@ -1,5 +1,5 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 - CH4. 스프링 입문(3) 프록시, 데코레이터 패턴
+title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH2. 디자인패턴(2) 프록시, AOP 패턴
 tags: LectureNote Fastcampus Design_Pattern
 ---
 
