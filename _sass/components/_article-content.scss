@@ -76,6 +76,7 @@
     background-color: $text-background-color;
     border-radius: map-get($base, border-radius);
     span {
+      font-size: .10rem;
       padding: 0;
       margin: 0;
     }
