@@ -1,5 +1,5 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 - CH4. 스프링 입문(7) PUT/DELETE API
+title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH4. 스프링 부트 시작하기(2) PUT/DELETE API
 tags: LectureNote Fastcampus SpringBoot REST
 ---
 

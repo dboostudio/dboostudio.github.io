@@ -1,5 +1,5 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 - CH4. 스프링 입문(8) 응답, ObjectMapper
+title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH4. 스프링 부트 시작하기(3) 응답, ObjectMapper
 tags: LectureNote Fastcampus SpringBoot Controller
 ---
 

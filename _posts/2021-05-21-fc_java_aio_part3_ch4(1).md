@@ -1,5 +1,5 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 Par3 - CH4. 스프링 부트 시작하기(1) Spring Boot, GET/POST API
+title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH4. 스프링 부트 시작하기(1) Spring Boot, GET/POST API
 tags: LectureNote Fastcampus SpringBoot REST
 ---
 
