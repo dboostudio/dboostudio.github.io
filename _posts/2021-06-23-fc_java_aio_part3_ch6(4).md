@@ -9,7 +9,7 @@ Filter : Web Application에서 관리되는 영역, Spring Boot Framework에서 
 응답에 대하여 최초/최종단계의 위치에 존재하며, 이를 통해서 요청/응답의 정보를 변경하거나 Spring에 의해
 데이터가 변환되기 전의 순수한 Client의 요청/응답 값을 확인 할 수 있다.
 
-- 유일하게 ServletRequest, ServletResponse의 객체를 변환 할 수 있다.
+> 유일하게 ServletRequest, ServletResponse의 객체를 변환 할 수 있다.
 
 주로 request/response의 Loggin용도로 활용하거나, 인증과 관련된 Logic들을 해당 Filter에서 처리한다.
 
