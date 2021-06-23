@@ -1,6 +1,6 @@
 ---
 title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH6. 스프링 기능 활용하기(3) Validation 모범사례
-tags: LectureNote Fastcampus Spring
+tags: LectureNote Fastcampus Spring Java_All_In_One
 ---
 
 ### Validation 모범사례

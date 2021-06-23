@@ -1,6 +1,6 @@
 ---
 title: <패스트캠퍼스> Java 웹개발마스터 - Part2. 객체지향 프로그래밍(5)
-tags: LectureNote Fastcampus java syntax
+tags: LectureNote Fastcampus java syntax Java_All_In_One
 ---
 
 ## Inner Class, Lambda Expression, Stream

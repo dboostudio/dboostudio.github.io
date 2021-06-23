@@ -1,6 +1,6 @@
 ---
 title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH2. 디자인패턴(2) 퍼사드, 전략 패턴
-tags: LectureNote Fastcampus Design_Pattern
+tags: LectureNote Fastcampus Design_Pattern Java_All_In_One
 ---
 
 ## Facade Pattern

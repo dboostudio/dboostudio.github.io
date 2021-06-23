@@ -1,6 +1,6 @@
 ---
 title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH6. 스프링 기능 활용하기(2) Exception
-tags: LectureNote Fastcampus Spring
+tags: LectureNote Fastcampus Spring Java_All_In_One
 ---
 
 Web Application에서 에러를 알리는 방법은 다음과 같다.

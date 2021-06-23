@@ -1,6 +1,6 @@
 ---
 title: <패스트캠퍼스> Java 웹개발마스터 - Part2. 객체지향 프로그래밍(4)
-tags: LectureNote Fastcampus java syntax
+tags: LectureNote Fastcampus java syntax Java_All_In_One
 ---
 
 ## 자료구조 간략 설명

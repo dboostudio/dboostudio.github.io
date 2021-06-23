@@ -1,6 +1,6 @@
 ---
 title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH1. 스프링 입문_객체지향
-tags: LectureNote Fastcampus OOP
+tags: LectureNote Fastcampus OOP Java_All_In_One
 ---
 
 #객체지향
