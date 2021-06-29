@@ -1,5 +1,5 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH4. 스프링 더 알아보기(3) ObjectMapper 더 알아보기
+title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH5. 스프링 더 알아보기(3) ObjectMapper 더 알아보기
 tags: LectureNote Fastcampus Spring Java_All_In_One
 ---
 
