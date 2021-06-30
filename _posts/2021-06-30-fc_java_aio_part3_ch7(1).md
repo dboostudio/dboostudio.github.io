@@ -44,8 +44,8 @@ public class RestTemplateService {
         // getFor~~ 를 호출하는 시점이 Client가 http로 서버에 붙는 시점이다.
         ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
 
-        log.info(String.valueOf(result.getStatusCode()));
-        log.info(result.getBody());
+        log.info("{}", result.getStatusCode());
+        log.info("{}", result.getBody());
 
         return result;
     }
@@ -139,8 +139,8 @@ public class RestTemplateService {
         ResponseEntity<UserResponse> result = restTemplate.getForEntity(uri, UserResponse.class);
 //        ResponseEntity result = restTemplate.getForObject(uri, UserResponse.class); // 비추천
 
-        log.info(String.valueOf(result.getStatusCode()));
-        log.info(String.valueOf(result.getBody()));
+        log.info("{}",result.getStatusCode());
+        log.info("{}",result.getBody());
 
         return result.getBody(); //UserResponse 타입이기 때문에 컨트롤러에서도 UserResponse를 반환하도록 한다.
     }
