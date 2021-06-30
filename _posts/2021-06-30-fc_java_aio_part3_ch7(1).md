@@ -1,5 +1,5 @@
 ---
-title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH7. Rest Template(1)
+title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH7. REST Template(1)
 tags: LectureNote Fastcampus Spring Java_All_In_One
 ---
 
