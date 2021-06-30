@@ -201,5 +201,6 @@ public class AsyncService {
 추가 주의사항
 
 > @Async는 AOP기반이기 때문에 프록시패턴에 따라 작동하며 public메소드에만 붙여줄 수 있다.
+
 > @Async작동하게 한 run()메소드에서 직접적으로 hello()를 호출하면 비동기로 동작하지 않는다. 왜냐하면
 같은 클래스내의 메소드를 호출하면 @Async가 동작하지 않으므로.
