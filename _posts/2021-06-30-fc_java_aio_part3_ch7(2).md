@@ -3,7 +3,7 @@ title: <패스트캠퍼스> Java 웹개발마스터 Part3 - CH7. REST Template(2
 tags: LectureNote Fastcampus Spring Java_All_In_One
 ---
 
-## REST Template(2)
+## REST Template (2)
 
 이번 시간에서는 REST Template을 활용하여 POST요청을 보내고 받는것을 실습한다.
 
