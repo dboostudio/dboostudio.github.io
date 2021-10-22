@@ -66,7 +66,7 @@ yat:
 # content_width: "920px"
 
 # Google analytics
-# google_analytics: [Tracking ID]
+google_analytics: 290799613
 
 # If you want to generate website sitemap, you can set true
 # sitemap: false
@@ -146,18 +146,18 @@ yat:
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-# header_pages:
+header_pages:
 #   - index.html
-#   - archives.html
-#   - categories.html
-#   - tags.html
-#   - about.md
+  - about.html
+  - categories.html
+  - tags.html
+#  - archives.html
 
 # Page default value
-# defaults:
-#   home:
-#     heading: Dboo의 테크 블로그
-#     subheading:
+defaults:
+  home:
+   heading: Dboo의 테크 블로그
+   subheading: 똥을 만드는 기계는 되지 말자.
 #     banner: "Your image url"
 
 # Banner default settings
@@ -183,16 +183,16 @@ yat:
 # paginate: 5
 
 # Disqus comments
-# disqus:
-#   shortname: "Your Disqus username"
+disqus:
+ shortname: "dbooslog"
 
 # Gitment comments
-# gitment:
-#   username: "Your GitHub username"
-#   repo: "The repo to store comments"
-#   client_id: "Your client ID"
-#   client_secret: "Your client secret"
-#   redirect_uri: "Your redirect url"   # If you use a custom domain name
+#gitment:
+# username: "dboostudio"
+# repo: "dboostudio.github.io"
+# client_id: "f4adf1f778eca9f88c46"
+# client_secret: "8f76fb231c3d66f89f769efc58eb97a56e2bec2c"
+# redirect_uri: "http://dboostudio.github.io"   # If you use a custom domain name
 
 # Build settings
 # highlighter: none
