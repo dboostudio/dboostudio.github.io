@@ -2,10 +2,10 @@
 layout: post
 author: Dboo
 categories: INFLEARN_SPRING_SEC
+title: <인프런> 스프링 시큐리티 CH3. 웹 어플리케이션 시큐리티(1) WebAsyncManagerIntegrationFilter
 tags: LectureNote Inflearn Spring Spring-Security
 ---
 
-# <인프런> 스프링 시큐리티 CH3. 웹 어플리케이션 시큐리티(1) WebAsyncManagerIntegrationFilter
 ## 스프링 시큐리티 ignoring()
 
 WebSecurity의 ignoring()을 사용해서 시큐리티 필터 적용을 제외할 요청을 설정할 수 있다.
