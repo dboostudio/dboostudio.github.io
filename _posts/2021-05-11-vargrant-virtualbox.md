@@ -1,4 +1,7 @@
 ---
+layout: post
+author: Dboo
+categories: ETC
 title: MacOS에 virtualBox + vagrant로 OracleDB 설정하기
 tags: short_tip vagrant virtualBox OracleDB
 ---

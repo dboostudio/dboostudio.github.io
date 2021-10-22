@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: INFLEARN_SPRING_SEC
+categories: Inflearn_Spring_Security
 title: <인프런> 스프링 시큐리티 CH2. 아키텍쳐(4) Filter&FilterChainProxy, DelegatingFilterProxy
 tags: LectureNote Inflearn Spring Spring-Security
 ---

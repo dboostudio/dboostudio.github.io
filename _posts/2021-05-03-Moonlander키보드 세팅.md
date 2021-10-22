@@ -1,4 +1,7 @@
 ---
+layout: post
+author: Dboo
+categories: Diary
 title: Moonlander 키보드 세팅
 tags: Dboo's Moonlander 리뷰
 ---

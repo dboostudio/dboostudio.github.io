@@ -1,4 +1,7 @@
 ---
+layout: post
+author: Dboo
+categories: FastCampus_DB
 title: <패스트캠퍼스> 데이터베이스와 SQLD CH1. 데이터베이스(1)
 tags: LectureNote Fastcampus Database SQL
 ---
