@@ -2,7 +2,7 @@
 layout: post
 author: Dboo
 categories: Inflearn_Spring_Security
-title: <인프런> 스프링 시큐리티 CH2. 아키텍쳐(6) FilterSecurityInterceptor, Summary
+title: CH2. 아키텍쳐(6) FilterSecurityInterceptor, Summary
 tags: LectureNote Inflearn Spring Spring-Security
 ---
 

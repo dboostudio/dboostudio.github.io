@@ -2,7 +2,7 @@
 layout: post
 author: Dboo
 categories: Inflearn_Spring_Security
-title: <인프런> 스프링 시큐리티 CH1. 폼 인증(3)
+title: CH1. 폼 인증(3)
 tags: LectureNote Inflearn Spring Spring-Security
 ---
 
