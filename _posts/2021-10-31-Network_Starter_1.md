@@ -50,16 +50,18 @@ tags: Network TCP/IP Protocol OSI-7-Layer
 
 ### 3. OSI 7계층과 TCP/IP
 
+1. OSI 7계층
+
 |:-:|:-:|:-:|:-:|
 |Layer#|Layer|PDU||
 |-|-|-|
 |7|Application Layer|Data|Application Layer|
-|6|Presentation Layer|Data|^^ Upper Layer|
-|5|Session Layer|Data|^^|
+|6|Presentation Layer|Data|^ Upper Layer|
+|5|Session Layer|Data|^|
 |4|Transport Layer|Segments|Data Flow Layer|
-|3|Network Layer|Packets|^^ Lower Layer|
-|2|Data Link Layer|Frames|^^|
-|1|Physical Layer|Bits|^^|
+|3|Network Layer|Packets|^ Lower Layer|
+|2|Data Link Layer|Frames|^|
+|1|Physical Layer|Bits|^|
 
 *PDU : Protocol Data Unit
 
@@ -69,3 +71,18 @@ tags: Network TCP/IP Protocol OSI-7-Layer
 
 - 1~4계층 : Data Flow Layer / Lower Layer
 - 5~7계층 : Application Layer / Upper Layer
+
+2. TCP/IP 프로토콜 스택
+
+현대 네트워크는 대부분 TCP/IP 와 이더넷으로 구성이 되어 있다.  
+
+|:-:|:-:|:-:|:-:|
+|Layer#|OSI Model|TCP/IP Model|
+|-|-|-|
+|7|Application Layer|Application|
+|6|Presentation Layer|^|
+|5|Session Layer|Data|^|
+|4|Transport Layer|Segments|Data Flow Layer|
+|3|Network Layer|Packets|^ Lower Layer|
+|2|Data Link Layer|Frames|^|
+|1|Physical Layer|Bits|^|
