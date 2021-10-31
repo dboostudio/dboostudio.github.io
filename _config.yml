@@ -196,9 +196,11 @@ disqus:
 
 # Build settings
 # highlighter: none
-markdown: kramdown
-kmarkdown:
-  input: GFM
+
+# markdown: kramdown
+# kmarkdown:
+#   input: GFM
+markdown : GFM
 
 plugins:
   - jekyll-feed
