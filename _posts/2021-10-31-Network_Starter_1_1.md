@@ -27,7 +27,7 @@ tags: Network TCP/IP Protocol OSI-7-Layer
 기존에는 3계층 구성이 일반적이었으나 가상화 기술과 (도커와 같은 가상 컨테이너를 의미하는 것 같다.) 높은
 대역폭을 요구하는 스케일아웃 기반의 서비스 등장으로 2계층 구성인 스파인-리프(Sping-Leaf)구조로 변화하였다.
 
-![https://www.arubanetworks.com/ko/spine-leaf-architecture/](/assets/img/IT-Starter/3-tier-and-2-tier-arch.jpeg)
+![https://www.arubanetworks.com/ko/spine-leaf-architecture/](/assets/img/Network-Starter/3-tier-and-2-tier-arch.jpeg)
 
 해당 아키텍처에 관한 자세한 내용은 2장과 13장에 나누어 다룬다.
 
