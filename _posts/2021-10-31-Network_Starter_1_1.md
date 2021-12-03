@@ -54,12 +54,12 @@ tags: Network TCP/IP Protocol OSI-7-Layer
 |Layer#|Layer|PDU||
 |-|-|-|
 |7|Application Layer|Data|Application Layer|
-|6|Presentation Layer|Data|^ Upper Layer|
-|5|Session Layer|Data|^|
+|6|Presentation Layer|Data|Upper Layer|
+|5|Session Layer|Data|^^|
 |4|Transport Layer|Segments|Data Flow Layer|
-|3|Network Layer|Packets|^ Lower Layer|
-|2|Data Link Layer|Frames|^|
-|1|Physical Layer|Bits|^|
+|3|Network Layer|Packets|Lower Layer|
+|2|Data Link Layer|Frames|^^|
+|1|Physical Layer|Bits|^^|
 
 *PDU : Protocol Data Unit
 
@@ -100,7 +100,7 @@ Tranceiver : 랜 카드와 케이블을 연결하는 장치
 TAP : 네트워크 모니터링과 패킷분석을 위해 전기신호를 다른 장비로 복제
 
 - 1계층 장비는 전기신호의 전달이 목적이므로, 받은 전기신호를 재생성하여 내보낸다.
-- 1계층 장비는 주소의 개념이 없으므로 전기신호가 들어온 포트를 제외한 나머지 포트에 동일한 전기 신호를 전송합니다.
+- 1계층 장비는 주소의 개념이 없으므로 전기신호가 들어온 포트를 제외한 나머지 포트에 동일한 전기 신호를 전송한다.
 
 ### 4-2. 2계층 (Data Link)
 
