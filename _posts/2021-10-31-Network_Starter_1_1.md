@@ -79,7 +79,7 @@ tags: Network TCP/IP Protocol OSI-7-Layer
 |-|-|-|
 |7|Application|Application|
 |6|Presentation|^|
-|5|Session|Data|^|
+|5|Session|Data|
 |4|Transport|Transport|
 |3|Network|Internet|
 |2|Data Link|Network Access|
