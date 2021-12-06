@@ -38,9 +38,9 @@ tags: Network TCP/IP Protocol OSI-7-Layer
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |-|-|-|-|-|-|
 |HTTP|SSH|FTP|DNS|SMTP|SNTP|
-|Span <td colspan=3>TCP <td colspan=3>UDP
-|Span <td colspan=6> IP
-|Ethernet|Token Ring||Frame Relay||ATM|
+|<--|TCP|-->|<--|UDP|-->|
+|<--|--|-IP|--|--|-->|
+|Ethernet|<-Token Ring|->|<-Frame Relay|->|ATM|
 
 - 잘 알려진 상위 프로토콜 지시자 : 포트번호
 
