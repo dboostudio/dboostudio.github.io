@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: Inflearn_Spring_Security
+categories: 인프런_스프링시큐리티_백기선
 title: CH3. 웹 어플리케이션 시큐리티(1) WebAsyncManagerIntegrationFilter
 tags: LectureNote Inflearn Spring Spring-Security
 ---

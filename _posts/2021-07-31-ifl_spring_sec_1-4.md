@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: Inflearn_Spring_Security
+categories: 인프런_스프링시큐리티_백기선
 title: CH1. 폼 인증(4)
 tags: LectureNote Inflearn Spring Spring-Security
 ---
