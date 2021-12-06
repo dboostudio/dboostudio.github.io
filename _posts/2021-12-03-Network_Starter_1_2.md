@@ -38,7 +38,7 @@ tags: Network TCP/IP Protocol OSI-7-Layer
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |-|-|-|-|-|-|
 |HTTP|SSH|FTP|DNS|SMTP|SNTP|
-|<--|TCP|-->|<--|UDP|-->|
+|<----|TCP|-->|<--|UDP|-->|
 |<--|--|-IP|--|--|-->|
 |Ethernet|<-Token Ring|->|<-Frame Relay|->|ATM|
 
