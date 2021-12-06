@@ -38,6 +38,27 @@ tags: Network TCP/IP Protocol OSI-7-Layer
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |-|-|-|-|-|-|
 |HTTP|SSH|FTP|DNS|SMTP|SNTP|
-|TCP|||UDP|||
-|IP||||||
+|Span <td colspan=3>TCP <td colspan=3>UDP
+|Span <td colspan=6> IP
 |Ethernet|Token Ring||Frame Relay||ATM|
+
+- 잘 알려진 상위 프로토콜 지시자 : 포트번호
+
+|-|-|
+|포트번호|서비스|
+|-|-|
+|TCP 20, 21|FTP|
+|TCP 22|SSH|
+|TCP 23|TELNET|
+|TCP 25|SMTP|
+|TCP 49|TACACS|
+|UDP 53|TACACS|
+|TCP, UDP 53|DNS|
+|UDP 67,68|BOOTP|
+|TCP, UDP 80|HTTP|
+|UDP 123|NTP|
+|UDP 161,162|SNMP|
+|TCP 443|HTTPS|
+|TCP, UDP 445|Microsoft-DS|
+
+포트번호의 경우, 4계층 헤더의 정보이지만 어플리케이션 계층의 프로토콜 종류를 나타내주는 정보이다.
