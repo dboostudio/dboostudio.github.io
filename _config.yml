@@ -148,7 +148,7 @@ google_analytics: 290799613
 # this and add the path to the pages in order as they should show up
 header_pages:
 #   - index.html
-  - about.html
+  # - about.html
   - categories.html
   - tags.html
 #  - archives.html
