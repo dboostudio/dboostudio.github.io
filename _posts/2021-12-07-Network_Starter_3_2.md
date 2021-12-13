@@ -63,6 +63,8 @@ TCP에서는 분할된 패킷을 잘 분할하고 수신측이 잘 조합하도�
 2. Data Transmission
   실질적으로 데이터를 보내고 받는 과정이다.
 
+
+
 3. 4-Way Handshake (End)
 
 #### 2) 윈도우 사이즈
