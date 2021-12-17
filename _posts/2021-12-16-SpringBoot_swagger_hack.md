@@ -22,7 +22,8 @@ org.springframework.context.ApplicationContextException: Failed to start bean 'd
 의 늪에 빠져있다가, 이미 스웨거가 잘 설정되어 있는 프로젝트랑 비교를 하니 스웨거 설정의 문제가 아니고
 다른건 스프링부트 버전밖에 없다는 생각이 들었다. 스프링부트 버전을 2.5.0 으로 낮추니 스웨거가 동작하였다.
 
-그래서 혹시 2.6.X 버전 스프링부트에 적용할 수 있는지 찾아보았는데 스프링폭스 깃허프 저장소에 이슈로 등록되어 있는 글이다.
+그래서 혹시 2.6.X 버전 스프링부트에 적용할 수 있는지 찾아보았는데 스프링폭스 깃허프 저장소에 이슈로 등록된
+글이 있었다.
 
 https://github.com/springfox/springfox/issues/3462 (게시글)  
 https://github.com/springfox/springfox/issues/3462#issuecomment-978707909 (해결책 답글)
