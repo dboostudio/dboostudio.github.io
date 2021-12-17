@@ -24,7 +24,7 @@ org.springframework.context.ApplicationContextException: Failed to start bean 'd
 
 그래서 혹시 2.6.X 버전 스프링부트에 적용할 수 있는지 찾아보았는데 스프링폭스 깃허프 저장소에 이슈로 등록되어 있는 글이다.
 
-https://github.com/springfox/springfox/issues/3462 (게시글)
+https://github.com/springfox/springfox/issues/3462 (게시글)  
 https://github.com/springfox/springfox/issues/3462#issuecomment-978707909 (해결책 답글)
 
 해당 게시글을 읽다보니 누군가 `강제로` 스프링 부트가 스웨거를 인식하는 방법이 있다고해서 따라해보았는데
