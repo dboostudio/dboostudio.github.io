@@ -157,7 +157,7 @@ header_pages:
 defaults:
   home:
    heading: Dboo의 테크 블로그
-   subheading: 똥을 만드는 기계는 되지 말자.
+   subheading: 개발은 낭만이지
 #     banner: "Your image url"
 
 # Banner default settings
