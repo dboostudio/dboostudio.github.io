@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: Bookmarks
+categories: 기억나니
 title: 자주쓰는 리눅스 명령어 모음
 tags: Linux Command
 ---
