@@ -157,7 +157,7 @@ header_pages:
 defaults:
   home:
    heading: Dboo의 테크 블로그
-   subheading: 개발은 낭만이지
+   subheading: 개발에 낭만을
 #     banner: "Your image url"
 
 # Banner default settings
