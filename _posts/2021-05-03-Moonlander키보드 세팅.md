@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: 신변잡기
+categories: 일상기록
 title: Moonlander 키보드 세팅
 tags: Dboo's Moonlander 리뷰
 ---
