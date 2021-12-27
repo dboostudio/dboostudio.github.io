@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: IT_엔지니어를_위한_네트워크_입문
+categories: 책)IT_엔지니어를_위한_네트워크_입문
 title: CH1. 네트워크 시작하기 (2)
 tags: Network TCP/IP Protocol OSI-7-Layer
 ---

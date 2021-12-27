@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: IT_엔지니어를_위한_네트워크_입문
+categories: 책)IT_엔지니어를_위한_네트워크_입문
 title: CH2. 네트워크 연결과 구성요소 (1)
 tags: Network
 ---
