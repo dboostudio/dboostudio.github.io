@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: 책)IT_엔지니어를_위한_네트워크_입문
+categories: 필기)IT_엔지니어를_위한_네트워크_입문
 title: CH3. 네트워크 통신하기 (1)
 tags: Network MAC_ADDR IP
 ---
