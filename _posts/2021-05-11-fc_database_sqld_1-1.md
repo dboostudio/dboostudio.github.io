@@ -3,7 +3,7 @@ layout: post
 author: Dboo
 categories: FastCampus_DB
 title: CH1. 데이터베이스(1)
-tags: LectureNote Fastcampus Database SQL
+tags: LectureNote Database SQL
 ---
 
 ## 데이터베이스
