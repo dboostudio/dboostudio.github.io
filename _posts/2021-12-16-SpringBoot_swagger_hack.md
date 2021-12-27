@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: 삽질은_아안돼
+categories: 삽질멈춰!
 title: SpringBoot 2.6.x 버전에서 Springfox 3.0.0(Swagger, AOP) 강제적용하기
 tags: SpringBoot Swagger
 ---
