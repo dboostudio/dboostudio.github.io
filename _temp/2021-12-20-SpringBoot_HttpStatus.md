@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: SPRING_BOOT
+categories: 기억나니
 title: SpringBoot 에서 기본적으로 제공하는 HttpStatus Code 정리
 tags: SpringBoot HttpStatus
 ---
