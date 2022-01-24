@@ -34,6 +34,11 @@ https://github.com/springfox/springfox/issues/3462#issuecomment-978707909 (해�
 1. spring.mvc.pathmatch.matching-strategy 옵션을 ant-path-matcher 로 변경한다.
   (application.properties에서 변경하면 된다.)
 2. WebMvcRequestsHandlerProvider 클래스 파일을 찾아서 통째로 복사해서 내 소스 안에 붙여넣는다.
+3. 해당 클래스의 생성자에서 handlerMappings의 내용을 다음과 같이 변경한다.
+
+~~~java
+this.handlerMappings = handlerMappings.stream().filter(mapping->mapping.getPatternParser()==null).collect(toList());
+~~~
 
 -> 해당 파일을 복사할 때 주의할 점은 패키지명이 그대로 살아있어야 한다는 점이다. 복사해서 넣으면 보통
 IDE들이 해당경로를 패키지명으로 넣어줄 텐데 그 패키지명을 지우고 원래의 패키지명을 유지하도록 해주면 된다.
