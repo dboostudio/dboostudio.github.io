@@ -2,7 +2,7 @@
 layout: post
 author: Dboo
 categories: 필기)인프런_스프링기반-REST-API-개발_백기선
-title: #1. 1) REST API 및 프로젝트 소개
+title: CH 1. REST API 및 프로젝트 소개
 tags: LectureNote REST API
 ---
 
