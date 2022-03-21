@@ -12,8 +12,8 @@ tags: LectureNote REST API
   - 사실 해당 질문을 받았을 때, 굉장히 어물쩡하게 넘어간 적이 많다. 그냥 위키에 나와있는대로 아키텍쳐 스타일이라는 정도로만 이해하고 있었기 때문에
     해당 질문에 대한 개념적인거나 REST의 존재 의의나 목적에 대한 이해는 하지 못했기 때문이다.
   - 백기선님이 강의내에서 언급하고 정리해서 알려주시긴 하지만, 직접 해당 스피치의 링크르 따라 들어가 내용을 정리해 보았다. 
-  - ![DEVIEW 스피치](https://youtu.be/RP_f5dMoHFc)
-  - ![정리글](https://dboostudio.github.io/%ED%8A%B9%EA%B0%95%ED%95%84%EA%B8%B0/2022/03/18/seminar_REST_deview.html)
+  - [DEVIEW 스피치](https://youtu.be/RP_f5dMoHFc)
+  - [정리글](https://dboostudio.github.io/%ED%8A%B9%EA%B0%95%ED%95%84%EA%B8%B0/2022/03/18/seminar_REST_deview.html)
 
 
 ### 1. Project 생성
