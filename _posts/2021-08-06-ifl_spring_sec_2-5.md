@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: 인프런_스프링시큐리티_백기선
+categories: 인프런-스프링_시큐리티-백기선
 title: CH2. 아키텍쳐(5) AccessDecisionManager
 tags: LectureNote Inflearn Spring Spring-Security
 ---
