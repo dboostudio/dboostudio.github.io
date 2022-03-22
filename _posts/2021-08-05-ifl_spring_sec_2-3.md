@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: 필기)인프런_스프링시큐리티_백기선
+categories: 인프런_스프링시큐리티_백기선
 title: CH2. 아키텍쳐(3) SecurityContextPersistenceFilter
 tags: LectureNote Inflearn Spring Spring-Security
 ---

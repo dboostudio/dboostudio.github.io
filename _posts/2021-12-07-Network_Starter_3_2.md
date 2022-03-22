@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Dboo
-categories: 필기)IT_엔지니어를_위한_네트워크_입문
+categories: IT_엔지니어를_위한_네트워크_입문
 title: CH3. 네트워크 통신하기 (2)
 tags: Network TCP UDP
 ---
