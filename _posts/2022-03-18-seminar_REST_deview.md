@@ -5,6 +5,7 @@ categories: 특강필기
 title: 그런 REST API로 괜찮은가?
 tags: LectureNote REST API
 ---
+
 ## 이응준님의 DEVIEW 스피치 - 그런 REST API로 괜찮은가?
 
 ### 1. REST의 등장
@@ -37,6 +38,7 @@ WEB의 원시적 단계를 거친 후 HTTP와 XML을 결합한 SOAP가 있었다
 
 ### 3. 그런데? REST가 아니라고?
 
+
 2008년, CMIS라는 것이 나왔는데 EMC, IBM, Microsoft에서 함께 작업했으며 REST 바인딩을 지원했다.
 
 그런데 Roy형은 "이거 REST 아님" (No REST in CMIS) 이라고 한다.
@@ -53,8 +55,8 @@ WEB의 원시적 단계를 거친 후 HTTP와 XML을 결합한 SOAP가 있었다
 
 그러면 REST API가 도대체 뭔가 분석해 내려가 보자.
 
-REST API : REST를 따르는 API
-REST : 분산 하이퍼미디어 시스템(웹과 같은)을 위한 아키텍쳐 스타일
+- REST API : REST를 따르는 API
+- REST : 분산 하이퍼미디어 시스템(웹과 같은)을 위한 아키텍쳐 스타일
 
 그러면 REST스타일에 어떤 제약조건들이 있는지 살펴보면,
 
