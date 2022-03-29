@@ -6,8 +6,6 @@ title: CH 1. JUnit5
 tags: LectureNote Test Java Junit5
 ---
 
-## JUnit5
-
 ### 1. JUnit5 소개
 
 - JUnit5 구성 : JUnit Platform 위에 Jupitor, Vintage가 올라가는 형태
@@ -64,7 +62,7 @@ tags: LectureNote Test Java Junit5
         );
         ~~~
 
-### 5. JUnit5 조건에 따라 테스트 실행하기 (Assume)
+### 5. 조건에 따라 테스트 실행하기 (Assume)
 
 - 테스트 코드를 어떤 조건(OS, java version, 환경변수 등)에 따라 실행하거나 실행하지 말아야 한다면
 
@@ -81,7 +79,7 @@ tags: LectureNote Test Java Junit5
 - @EnabledOnOs({OS.MAC, OS.LINUX}), @DisabledOnOs()
 - @EnabledOnJre(JRE.JAVA_8), @DisabledOnJre()
 
-### 6. JUnit5 태깅, 필터링
+### 6. 태깅, 필터링
 
 - 태스트 태깅
     + 테스트 그룹화
@@ -151,6 +149,7 @@ public void csvSource(Integer integer, String string) throws Exception {
 ~~~
 
 - ArgumentAccessor
+
 ~~~java
 @ParameterizedTest
 @CsvSource({"10, '자바'" , "20, '스프링'"})
@@ -160,6 +159,7 @@ public void csvSource_argumentAccessor(ArgumentsAccessor argumentsAccessor) thro
 ~~~
 
 - 혹은 ArgumentAggregator를 구현해서 사용할 수 있다. (static inner class || public class 이어야 함)
+
 ~~~java
 @ParameterizedTest
 @CsvSource({"10, '자바'" , "20, '스프링'"})
@@ -177,4 +177,119 @@ static class StudyAggregator implements ArgumentsAggregator {
 }
 ~~~
 
+### 9. 테스트 인스턴스
+
+- JUnit은 테스트 메소드마다 테스트 인스턴스를 새로 만드는 것을 기본 전략으로 한다.
+
+- @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    + 만일 테스트끼리 공유할 수 있는 변수나 메소드를 쓰고 싶다면 테스트 인스턴스의 라이프 사이클을 조정해 줄 수 있다.
+    + @BeforeAll, @AfterAll을 static으로 선언할 필요가 없다.
+
+### 10. 테스트 순서
+
+- JUnit5에서는 기본적으로 테스트가 작성되어있는 순서대로 실행이 되기는 한다.
+- 하지만 혹시 테스트 코드끼리 의존성이 있거나 순서가 필요한 경우에 강제로 순서를 줄 수 있다.
+    + Use case를 테스트하는 경우나 통합테스트에 유용할 수 있다.
+
+- @TestMethodOrder(`MethodOrder구현체`)
+    + 구현체는 세가지를 제공한다.
+        * Alphanumeric
+        * OrderAnnotation > @Order() 어노테이션으로 설정한다. (jupitor의 것을 써야함)
+        * Random
+
+### 11. junit-platform.properties
+
+- JUnit 설정 파일로, src/test/resources/ 경로에 junit-platform.properties파일을 만들어 적용한다.
+
+~~~properties
+#테스트 인스턴스 라이프사이클 설정
+junit.jupiter.testinstance.lifecycle.default = per_class
+
+#확장팩 자동 감지 기능
+junit.jupiter.extensions.autodetection.enabled = true
+
+#@Disabled 무시하고 실행하기
+junit.jupiter.conditions.deactivate = org.junit.*DisabledCondition
+
+#테스트 이름 표기 전략 설정
+junit.jupiter.displayname.generator.default = org.junit.jupiter.api.DisplayNameGenerator$ReplaceUnderscores
+~~~
+
+### 12. 확장 모델
+
+- JUnit4 : @RunWith(), TestRule, MethodRule
+- JUnit5 : @ExtendWith()
+
+- Extension 등록 방법
+    + 선언적 등록 : @ExtendWith
+    + 프로그래밍 등록 : @RegisterExtension
+    + 자동 등록 : 자바 ServiceLoader 이용
+
+#### 1. 선언적 등록 @ExtendWith()
+
+- 간단한 Extension을 만들어보자.
+
+~~~java
+
+
+public class FindSlowTestExtension implements BeforeTestExecutionCallback, AfterTestExecutionCallback {
+
+    private static final long THRESHOLD = 1000;
+
+    @Override
+    public void afterTestExecution(ExtensionContext context) throws Exception {
+        ExtensionContext.Store store = getStore(context);
+        Method requiredTestMethod = context.getRequiredTestMethod();
+        String methodName = requiredTestMethod.getName();
+        SlowTest annotation = requiredTestMethod.getAnnotation(SlowTest.class);
+
+        long start_time =  store.remove("START_TIME", long.class);
+        long duration = System.currentTimeMillis() - start_time;
+
+
+        if(duration > THRESHOLD && annotation == null){
+            System.out.printf("Please consider mark method [%s] with @SlowTest \n", methodName);
+        }
+    }
+
+    @Override
+    public void beforeTestExecution(ExtensionContext context) throws Exception {
+        ExtensionContext.Store store = getStore(context);
+        store.put("START_TIME", System.currentTimeMillis());
+    }
+
+    private ExtensionContext.Store getStore(ExtensionContext context){
+        String className = context.getRequiredTestClass().getName();
+        String methodName = context.getRequiredTestMethod().getName();
+        return context.getStore(ExtensionContext.Namespace.create(className, methodName));
+    }
+
+}
+
+~~~
+
+- @ExtendWith(FindSlowTestExtension.class)라고 선언하면 Extension이 적용된다.
+
+#### 2. 프로그래밍으로 등록 @RegisterExtension
+
+- 만일 Extension내에 어떤 변수를 선언하고, 테스트마다 다른 값을 넣어서 사용하고 싶어 생성자를 작성해뒀다면 위와같이 @ExtendWith()으로는 사용이 불가하다.
+- 생성자를 이용해 선언하고, @RegisterExtension 어노테이션을 붙여준다.
+
+~~~java
+public class RegisterExtensionTest {
+
+    @RegisterExtension
+    static FindSlowTestExtension findSlowTestExtension = new FindSlowTestExtension(2000L);
+
+    //Test Codes...
+}
+
+~~~
+
+#### 3. ServiceLoader를 통한 자동등록
+
+- junit-platform.properties
+    + junit.jupiter.extensions.autodetection.enabled = true 로 하고, 설정을 추가로 해주면 된다고 하는데 수업에서는 소개하지 않았다.
+
+### 13. 마이그레이션
 

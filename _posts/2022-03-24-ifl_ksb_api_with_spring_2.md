@@ -164,3 +164,6 @@ public class EventDto {
         .andExpect(jsonPath("eventStatus").value(EventStatus.DRAFT.name()))
 ~~~
 
+### 4. 입력값 이외의 에러 발생
+
+
