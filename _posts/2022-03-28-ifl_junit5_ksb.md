@@ -225,7 +225,7 @@ junit.jupiter.displayname.generator.default = org.junit.jupiter.api.DisplayNameG
     + 프로그래밍 등록 : @RegisterExtension
     + 자동 등록 : 자바 ServiceLoader 이용
 
-#### 1. 선언적 등록 @ExtendWith()
+#### 1) 선언적 등록 @ExtendWith()
 
 - 간단한 Extension을 만들어보자.
 
@@ -270,7 +270,7 @@ public class FindSlowTestExtension implements BeforeTestExecutionCallback, After
 
 - @ExtendWith(FindSlowTestExtension.class)라고 선언하면 Extension이 적용된다.
 
-#### 2. 프로그래밍으로 등록 @RegisterExtension
+#### 2) 프로그래밍으로 등록 @RegisterExtension
 
 - 만일 Extension내에 어떤 변수를 선언하고, 테스트마다 다른 값을 넣어서 사용하고 싶어 생성자를 작성해뒀다면 위와같이 @ExtendWith()으로는 사용이 불가하다.
 - 생성자를 이용해 선언하고, @RegisterExtension 어노테이션을 붙여준다.
@@ -286,10 +286,23 @@ public class RegisterExtensionTest {
 
 ~~~
 
-#### 3. ServiceLoader를 통한 자동등록
+#### 3) ServiceLoader를 통한 자동등록
 
 - junit-platform.properties
     + junit.jupiter.extensions.autodetection.enabled = true 로 하고, 설정을 추가로 해주면 된다고 하는데 수업에서는 소개하지 않았다.
 
-### 13. 마이그레이션
+### 13. Junit4 마이그레이션
 
+- junit-vintage-engine을 의존성으로 추가하면, JUnit 5의 junit-platform으로 JUnit 3과 4로 작성된 테스트를 실행할 수 있다.
+    + @Rule은 기본적으로 지원하지 않지만, junit-jupiter-migrationsupport 모듈(의존성 추가 필요)이 제공하는 @EnableRuleMigrationSupport를 사용하면 다음 타입의 Rule을 지원한다.
+        * ExternalResource
+        * Verifier
+        * ExpectedException
+
+|:-:|:-:|
+|JUnit4|JUnit5|
+|-|-|
+|@Category(Class)|@Tag(String)|
+|@RunWith, @Rule, @ClassRule|@ExtendWith, @RegisterExtension|
+|@Ignore|@Disalbed|
+|@Before, @After, @BeforeClass, @AfterClass|@BeforeEach, @AfterEach, @BeforeAll, @AfterAll|
