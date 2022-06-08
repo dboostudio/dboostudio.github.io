@@ -35,7 +35,7 @@ tags: LectureNote Test Java Junit5 Mockito
 	1. Mockito.mock 으로 Mock객체 생성 (mock()을 static import해서 더 짧게 사용가능)
 	2. @Mock 어노테이션으로 Mock객체 생성 (@ExtendWith(MockitoExtesion.class) 필요)
 	
-		~~~java
+		```java
 		@ExtendWith(MockitoExtension.class)
 		class StudyServiceTest{
     		@Mock
@@ -54,7 +54,7 @@ tags: LectureNote Test Java Junit5 Mockito
         		assertNotNull(studyService);
     		}
 		}
-		~~~
+		```
 
 	3. 테스트 메소드의 파라미터로 전달
 	
