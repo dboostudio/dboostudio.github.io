@@ -32,38 +32,36 @@ tags: LectureNote Test Java Junit5 Mockito
 - StudyService 인스턴스에 대한 테스트를 진행한다고 가정
 - StudyService 에서 사용하는 의존성은 StudyRepository와 MemberService가 있다고 생각해보자.
 - 테스트에서 다른 서비스나 리포지토리의 의존성을 끊기 위해 Mock객체를 만들어서 사용한다.
-	1. Mockito.mock 으로 Mock객체 생성 (mock()을 static import해서 더 짧게 사용가능)
-	2. @Mock 어노테이션으로 Mock객체 생성 (@ExtendWith(MockitoExtesion.class) 필요)
-	
-		```java
-		@ExtendWith(MockitoExtension.class)
-		class StudyServiceTest{
-    		@Mock
-    		MemberService memberService;
-    		@Mock
-    		StudyRepository studyRepository;
-		
-    		@Test
-    		public void createStudyService() throws Exception {
-        		// Mockito.mock
-		//        MemberService memberService = Mockito.mock(MemberService.class);
-		//        StudyRepository studyRepository = mock(StudyRepository.class);
-		
-        		StudyService studyService = new StudyService(memberService, studyRepository);
-	
-        		assertNotNull(studyService);
-    		}
-		}
-		```
 
-	3. 테스트 메소드의 파라미터로 전달
+1. Mockito.mock 으로 Mock객체 생성 (mock()을 static import해서 더 짧게 사용가능)
+2. @Mock 어노테이션으로 Mock객체 생성 (@ExtendWith(MockitoExtesion.class) 필요)
+	```java
+	@ExtendWith(MockitoExtension.class)
+	class StudyServiceTest{
+    	@Mock
+    	MemberService memberService;
+    	@Mock
+    	StudyRepository studyRepository;
 	
-		~~~java
-		@Test
-	    public void createStudyService(@Mock MemberService memberService,
-	                                    @Mock StudyRepository studyRepository) throws Exception {
-	    }
-		~~~
+    	@Test
+    	public void createStudyService() throws Exception {
+        	// Mockito.mock
+	//        MemberService memberService = Mockito.mock(MemberService.class);
+	//        StudyRepository studyRepository = mock(StudyRepository.class);
+	
+        	StudyService studyService = new StudyService(memberService, studyRepository);
+
+        	assertNotNull(studyService);
+    	}
+	}
+	```
+3. 테스트 메소드의 파라미터로 전달
+	~~~java
+	@Test
+    public void createStudyService(@Mock MemberService memberService,
+                                    @Mock StudyRepository studyRepository) throws Exception {
+    }
+	~~~
 
 ### 4. Mock 객체 Stubbing (행동 조작)
 
