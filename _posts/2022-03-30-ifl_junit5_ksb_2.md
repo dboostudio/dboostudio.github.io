@@ -22,9 +22,10 @@ tags: LectureNote Test Java Junit5 Mockito
 - 없다면, mockito-core 와 mockito-junit-jupiter를 추가해서 쓴다.
 
 **Mock을 활용하기**
-	1. Mock을 만드는 법
-	2. Mock이 어떻게 동작할지 관리하는 법
-	3. Mock의 행동을 검증하는 법
+
+1. Mock을 만드는 법
+2. Mock이 어떻게 동작할지 관리하는 법
+3. Mock의 행동을 검증하는 법
 
 ### 3. Mock 객체 만들기
 
@@ -33,6 +34,7 @@ tags: LectureNote Test Java Junit5 Mockito
 - 테스트에서 다른 서비스나 리포지토리의 의존성을 끊기 위해 Mock객체를 만들어서 사용한다.
 	1. Mockito.mock 으로 Mock객체 생성 (mock()을 static import해서 더 짧게 사용가능)
 	2. @Mock 어노테이션으로 Mock객체 생성 (@ExtendWith(MockitoExtesion.class) 필요)
+	
 		~~~java
 		@ExtendWith(MockitoExtension.class)
 		class StudyServiceTest{
@@ -53,7 +55,9 @@ tags: LectureNote Test Java Junit5 Mockito
     		}
 		}
 		~~~
+
 	3. 테스트 메소드의 파라미터로 전달
+	
 		~~~java
 		@Test
 	    public void createStudyService(@Mock MemberService memberService,
@@ -81,6 +85,7 @@ tags: LectureNote Test Java Junit5 Mockito
 	+ 메소드가 동일한 매개변수로 여러번 호출 : 각기 다르게 행동
 
 1. when().thenReturn()
+
 	~~~java
 	@Test
 	public void createStudyService() throws Exception {
@@ -96,12 +101,14 @@ tags: LectureNote Test Java Junit5 Mockito
 	
 	}
 	~~~
+
 	+ 1L로 아이디를 찾을때 생성한 member를 리턴하도록 정의했다.
 	+ 2L로 아이디를 찾으면 member를 리턴하지 않는다.
 	
-	| any()를 이용하여 어떤 파라미터가 들어와도 객체가 동일하게 행동하도록 정의하기
+	- any()를 이용하여 어떤 파라미터가 들어와도 객체가 동일하게 행동하도록 정의하기
 		* mockito.ArgumentMathcer.any 를 이용하면 어떤 아이디로 찾더라도 동일한 member객체를 반환하도록 정의할 수 있다.
 		* 이 외에도 anyInt, artThat 등으로 특정한 파라미터값에 대한 조건을 걸어줄 수 있다.
+	
 	~~~java
 	when(memberService.findById(any())).thenReturn(Optional.of(member));
 	~~~
@@ -112,6 +119,7 @@ tags: LectureNote Test Java Junit5 Mockito
 
 3. 동일하게 호출되어도 다르게 행동하도록 조작
 	- then문을 여러번 호출하도록 stubbing해주면 된다.
+
 	~~~java
 	when(memberService.findById(any()))
                 	.thenReturn(Optional.of(member))
@@ -150,12 +158,14 @@ tags: LectureNote Test Java Junit5 Mockito
 	
 	}
 	~~~
+
 	+ notify라는 메소드가 1번 memberService에서 호출됨을 검증하는것이고, 어떤 파라미터와 함께 호출되었는지도 확인이 가능하다.
 	+ verify가 확인하는 호출에서도 argumentMatcher기능을 사용하여 any(), anyInt(), ... 등을 사용할 수 있다.
 	
 2. Method 호출 순서 확인
 	+ Method 호출 순서를 확인할 필요가 있을때에는 InOrder객체의 기능을 사용한다.
 	+ 호출되는 순서 차례로 verify하면 된다.
+
 	~~~java
 	InOrder inOrder = inOrder(memberService);
     inOrder.verify(memberService).notify(study);
@@ -163,6 +173,7 @@ tags: LectureNote Test Java Junit5 Mockito
 	~~~
 
 3. timeout 확인
+
 	~~~java
 	verify(memberService, tiemout(10000)).findById(any());
 	~~~
@@ -183,6 +194,7 @@ tags: LectureNote Test Java Junit5 Mockito
 	+ verifyNoMoreInteractions()는 shouldHaveNoMoreInteraction()으로 적용
 - BDD 스타일 적용 전후 비교
 	+ 기존 mockito 스타일 TDD
+
 		~~~java
 		@Test
     	public void createNewStudy_before_BDD() throws Exception {
@@ -208,7 +220,9 @@ tags: LectureNote Test Java Junit5 Mockito
         	verifyNoMoreInteractions(memberService);
     	}
 		~~~
+
 	+ mockito BDD 스타일 적용
+
 		~~~java
 	    @Test
     	public void createNewStudy_after_BDD() throws Exception {
