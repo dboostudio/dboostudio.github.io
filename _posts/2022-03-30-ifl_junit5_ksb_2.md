@@ -3,7 +3,7 @@ layout: post
 author: Dboo
 categories: 인프런-더자바_테스트-백기선
 title: CH 2. Mockito
-tags: LectureNote Test Java Junit5
+tags: LectureNote Test Java Junit5 Mockito
 ---
 
 ### 1. Mockito 소개
